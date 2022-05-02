@@ -1,0 +1,78 @@
+<html>
+<head>
+        <title>Mental health care deserts</title>
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width =device-width, initial-scale =1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Radio+Canada&display=swap" rel="stylesheet">
+</head>
+<body>
+<section id="banner">
+        <div class="banner-text">
+            <h1>Mental Health Care Deserts</h1>
+            <p>Mental health disorders are among the most common health conditions faced by Californians: Nearly 1 in 6 California adults experience a mental illness of some kind, and 1 in 24 have a serious mental illness that makes it difficult to carry out major life activities.</p>
+            <div class="banner-btn">
+                <a href="#"><span></span> Read more about mental health in California here</a>
+
+            </div>
+        </div>
+</section>
+
+<div id="sideNav">
+    <nav>
+    <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">DATA</a></li>
+        <li><a href="#">SEARCH</a></li>
+        <li><a href="#">NEWS</a></li>
+    </ul>
+    </nav>
+</div>
+<div id="menuBtn">
+    <img src="Barber_Shop_img/menu.png" id="menu">
+</div>
+
+<!--Features-->
+
+<section id="feature">
+<div class="title-text">
+<p>FIND THE MENTAL HEALTH YOU NEED</p>
+<h1>WITH OUR SEARCH TOOL</h1>
+<div class="container">
+    <form action="https://www.google.com/search" method="get" class="search-bar">
+        <input type="text" placeholder="Introduce your address" name="q">
+        <button type="submit"><img src="images/search.png"></button>
+    </form>
+</div>
+</div>
+<div class="feature-box">
+    <div class="features">
+        <h1>Some graphs about mental health in CA...</h1>
+    </div>
+</div>
+</section>
+
+
+<script>
+var menuBtn = document.getElementById("menuBtn")
+var sideNav = document.getElementById("sideNav")
+var menu = document.getElementById("menu")
+
+sideNav.style.right = "-250px";
+
+menuBtn.onclick = function(){
+    if(sideNav.style.right == "-250px"){
+       sideNav.style.right = "0";
+    }
+    else{
+         sideNav.style.right = "-250px";
+
+    }
+}
+</script>
+
+
+
+</body>
+</html>
