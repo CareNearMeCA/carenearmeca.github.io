@@ -115,7 +115,7 @@ nav ul li a{
 }
 .title-text p{
     margin: auto;
-    font-size: 25px;
+    font-size: 20px;
     font-family: 'Radio Canada', sans-serif;
     color: rgb(3, 12, 56);
     font-weight: bold;
@@ -131,15 +131,13 @@ nav ul li a{
 }
 
 .feature-box{
+    text-align: center;
+    padding-bottom: 0px;
+    margin-top: 0%;
     font-size: 15px;
     font-family: 'Radio Canada', sans-serif;
-    color:rgba(3, 12, 56);
-    width: 80%;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    text-align: center;
+    color:rgba(3, 12, 56)
+    z-index: 1;
 }
 
 .container{
@@ -152,6 +150,7 @@ nav ul li a{
     display: flex;
     align-items: center;
     justify-content: center;
+    background: rgba(156, 204, 238, 0.4)
 }
 .search-bar{
     width: 100%;
@@ -187,4 +186,15 @@ nav ul li a{
     height: 60px;
     background-color:rgb(3, 12, 56);
     cursor: pointer;
+}
+
+.map {
+    margin-top: 2%;
+    width: 1000px;
+    height: 500px;
+}
+
+.vis{
+    margin-top: 0%;
+    background: rgba(156, 204, 238, 0.4)
 }

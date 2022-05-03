@@ -6,6 +6,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Radio+Canada&display=swap" rel="stylesheet">
+    <title>Embedding Vega-Lite</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.21.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.2"></script>
 </head>
 <body>
 <section id="banner">
@@ -13,7 +17,7 @@
             <h1>Mental Health Care Deserts</h1>
             <p>Mental health disorders are among the most common health conditions faced by Californians: Nearly 1 in 6 California adults experience a mental illness of some kind, and 1 in 24 have a serious mental illness that makes it difficult to carry out major life activities.</p>
             <div class="banner-btn">
-                <a href="#"><span></span> Read more about mental health in California here</a>
+                <a href="https://calmatters.org/children-and-youth/2022/04/childrens-mental-health-california/"><span></span> Read more about mental health in California here</a>
 
             </div>
         </div>
@@ -33,22 +37,27 @@
     <img src="add_img/menu.png" id="menu">
 </div>
 
+
 <!--Features-->
 
 <section id="feature">
 <div class="title-text">
 <p>FIND THE MENTAL HEALTH YOU NEED</p>
 <h1>WITH OUR SEARCH TOOL</h1>
-<div class="container">
+<!-- <div class="container">
     <form action="https://www.google.com/search" method="get" class="search-bar">
         <input type="text" placeholder="Introduce your address" name="q">
         <button type="submit"><img src="images/search.png"></button>
     </form>
+<div>
+-->
+    <img src="images/fake_map.png" class="map">
+</div>
 </div>
 </div>
 <div class="feature-box">
     <div class="features">
-        <h1>Some graphs about mental health in CA...</h1>
+        <h1>CALIFORNIA MENTAL HEALTH CARE IN FIGURES </h1>
     </div>
 </div>
 </section>
@@ -72,7 +81,33 @@ menuBtn.onclick = function(){
 }
 </script>
 
+<div id="vis"></div>
 
+    <script type="text/javascript">
+      var yourVlSpec = {
+        $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+        description: 'A simple bar chart with embedded data.',
+        data: {
+          values: [
+            {a: 'A', b: 28},
+            {a: 'B', b: 55},
+            {a: 'C', b: 43},
+            {a: 'D', b: 91},
+            {a: 'E', b: 81},
+            {a: 'F', b: 53},
+            {a: 'G', b: 19},
+            {a: 'H', b: 87},
+            {a: 'I', b: 52}
+          ]
+        },
+        mark: 'bar',
+        encoding: {
+          x: {field: 'a', type: 'ordinal'},
+          y: {field: 'b', type: 'quantitative'}
+        }
+      };
+      vegaEmbed('#vis', yourVlSpec);
+    </script>
 
 </body>
 </html>
