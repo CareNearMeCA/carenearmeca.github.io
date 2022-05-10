@@ -1,3 +1,5 @@
+    
+    
     mapboxgl.accessToken = 'pk.eyJ1IjoiZnJhbnByaW5jZXNzMTk5NSIsImEiOiJjbDJvMmNhd3cyNnRzM2VzYjNkdGtia2d6In0.TAFYy_RFMRMI5UOyo3ZggQ';
     const map = new mapboxgl.Map({
         container: 'map',
@@ -18,7 +20,9 @@
         geocoder.on('result', async (event) =>{
             const point = event.result.center;
             const tileset ='franprincess1995.5mmmo9io';
-            const radius = 8046.72;
+            //TODO: function or just inline code that gets value from select menu of radii 
+            const radiusFromHtml = document.querySelector('input[name="radius"]:checked').value;
+            const radius = (1609.34*radiusFromHtml); //Use function that grabs select menu radius value
             const limit = 50;
             marker.setLngLat(point).addTo(map);
 

@@ -41,6 +41,7 @@
     <div class="title-text">
     <p>FIND THE MENTAL HEALTH YOU NEED</p>
     <h1>WITH OUR SEARCH TOOL</h1>
+
     <!-- <div class="container">
         <form action="https://www.google.com/search" method="get" class="search-bar">
             <input type="text" placeholder="Introduce your address" name="q">
@@ -49,6 +50,27 @@
     <div>
     -->
     </div>
+    <form>
+        <p>Please select the preferred radius in which you want to search:</p>
+        <div>
+          <input type="radio" id="distance1"
+           name="radius" value=1 checked>
+          <label for="distance1">1 Mile</label>
+        </div>
+        <div>
+          <input type="radio" id="distance2"
+           name="radius" value=5>
+          <label for="distance2">5 Miles</label>
+        </div>
+        <div>
+          <input type="radio" id="distance3"
+           name="radius" value=10>
+          <label for="distance3">10 Miles</label>
+        </div>
+    </form>
+
+        
+
 <div id='map'>
 </div>
 <script src="./mapFunction.js"></script>
@@ -126,6 +148,9 @@ menuBtn.onclick = function(){
       };
       vegaEmbed('#vis', yourVlSpec);
     </script>
+    <input type="radio" name="radiusChoice" value="1">
+
+
 
 </body>
 </html>
