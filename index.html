@@ -14,40 +14,6 @@
         <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
         <script src='./static_js/mapbox-gl-geocoder.js'></script>
         <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css' type='text/css' />
-        <style>
-            #map {
-                height: 500px;
-                width: 500px;
-                position:sticky;
-                padding-top: 20px;
-            }
-            .map-legend {
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                background: #fff;
-                margin-right: 600px;
-                font-family: Arial, sans-serif;
-                overflow: auto;
-                border-radius: 1px;
-            }
-            #legend {
-                padding: 10px;
-                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-                line-height: 18px;
-                height: 100px;
-                margin-bottom: 40px;
-                width: 250px;
-            }
-
-            .legend-key {
-                display: inline-block;
-                border-radius: 20%;
-                width: 10px;
-                height: 10px;
-                margin-right: 5px;
-            }
-        </style>
         
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Radio+Canada&display=swap" rel="stylesheet">
@@ -87,22 +53,22 @@
            name="radius" value=1 checked>
           <label for="distance1">1 Mile</label>
         </div>
-        <div id="radio2">
+        <div id="radio1">
           <input type="radio" id="distance2"
            name="radius" value=5>
           <label for="distance2">5 Miles</label>
         </div>
-        <div id="radio3">
+        <div id="radio2">
           <input type="radio" id="distance3"
            name="radius" value=10>
           <label for="distance3">10 Miles</label>
         </div>
-        <div>
+        <div id="radio3">
             <input type="radio" id="distance4"
              name="radius" value=25>
             <label for="distance4">25 Miles</label>
           </div>
-        <div>
+        <div id="radio4">
             <input type="radio" id="distance5"
              name="radius" value=50>
             <label for="distance5">50 Miles</label>
@@ -112,7 +78,7 @@
         
 <div id='map'>
 </div>
-<div class='map-legend' id='legend'><h2>Facilities per every thousand people</h2><br></div>
+<div class='map-legend' id='legend'><h1>Facilities per every thousand people</h1><br></div>
 <script src="./mapFunction.js"></script>
 </script>
 
