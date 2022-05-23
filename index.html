@@ -26,7 +26,7 @@
 <section id="banner">
         <div class="banner-text">
             <h1>Care Near You in California</h1>
-            <p>Mental health disorders are among the most common <a href="https://www.chcf.org/wp-content/uploads/2018/03/MentalHealthCalifornia2018.pdf">health conditions faced by Californians</a>: Nearly 1 in 6 California adults experience a mental illness of some kind, and 1 in 24 have a serious mental illness that makes it difficult to carry out major life activities.</p>
+            <p>Mental health disorders are among the most common <a href="https://www.chcf.org/wp-content/uploads/2018/03/MentalHealthCalifornia2018.pdf">health conditions faced by Californians</a>: Nearly 1 in 6 California adults experience a mental illness of some kind, and 1 in 24 have a serious mental illness that makes it difficult to carry out major life activities.</p><p>Solving mental health-related illnesses requires proper attention. But, about two-thirds of adults with a mental illness and two-thirds of adolescents with major depressive episodes did not get treatment in California in 2018. The goal of this website is to help Californians find the mental health care they need.</p>
             <div class="box">
               <div>
               <p>California has about <span class="bolded">2,100</span> mental health facilities throughout the state. Half of them are concentrated in Los Angeles, Orange and San Diego counties.</p>
@@ -74,13 +74,41 @@
             <label for="distance5">50 Miles</label>
         </div>
     </form>
-
+</section>
         
 <div id='map'>
 </div>
 <div class='map-legend' id='legend'><h1>Facilities per every thousand people</h1><br></div>
 <script src="./mapFunction.js"></script>
-</script>
+
+<section id="facilities">
+  <div class="facility-text">
+    <p>
+      Hover over a facility to see contact and service details.
+      <br>
+      <br>
+      If no facilities show up around your address, try redoing the search with a bigger radius.
+      <br>
+      <br>
+      All of the facilities you see on the map have been licensed by the CA Department of Health Care Services or the CA Department of Public Health. This list is not exhaustive, and there may be other facilities where you can receive care. 
+      The following list shows what kinds of facilities you will see on the map. Click the links to learn more.
+    </p>
+    <br>
+    <ul id= "facility-list">
+      <li><a href="https://www.dhcs.ca.gov/psychiatric-health-facilities">Psychiatric Health Facilities (PHF)</a></li>
+      <li><a href="https://www.dhcs.ca.gov/individuals/Pages/NTP.aspx">Narcotic Treatment Programs</a></li>
+      <li> Substance Use Treatment Facilities </li>
+        <ul id ="nested-list">
+          <li>NON = Non-residential rehab</li>
+          <li>RES = Residental rehab</li>
+          <li>NON DETOX = Non-residential detox</li>
+          <li>RES DETOX = Residential detox</li>
+        </ul>
+      <li><a href="https://www.dhcs.ca.gov/mental-health-rehabilitation-centers">Mental Health Rehabilitation Center</a></li>
+      <li>Psychology Clinic</li>
+      <li>Acute Psychiatric Hospital (APH)</li>
+    </ul>
+  </div>
 
 
 </body>

@@ -23,9 +23,12 @@
     margin-top: 3%;
     font-size: 20px;
     font-style: normal;
-    text-align: center;
+    text-align: left;
     margin-left: 20%;
     margin-right: 20%;
+    text-indent: 50px;
+    margin-bottom: 1px;
+    
 }
 .banner-btn{
     margin: 20px auto 0;
@@ -74,6 +77,32 @@
   .bolded {
        font-weight: bold; 
        color: orange;
+}
+
+#facilities{
+    position: relative;
+    margin-right: 50px;
+    margin-top: 150px;
+    height: 500px;
+    width: 600px;
+    float: right;
+    overflow: auto;
+}
+.facility-text p{
+    font-size: 18px;
+    font-family: 'Radio Canada', sans-serif;
+    text-align: left;
+}
+
+#facility-list{
+    font-family: 'Radio Canda', sans-serif;
+    list-style-type: "→";
+    padding-left: 40px;
+}
+
+#nested-list{
+    font-family: 'Radio Canda', sans-serif;
+    padding-left: 50px;
 }
 
 /*--feature--*/
@@ -133,11 +162,13 @@
 
 #map {
     height: 500px;
-    width: 500px;
+    width: 600px;
     position:sticky;
     padding-top: 20px;
     margin: auto;
     margin-left: 100px;
+    margin-bottom: 200px;
+    float:left;
 }
 .map-legend {
     font-family: 'Radio Canada', sans-serif;
@@ -148,19 +179,20 @@
     bottom: 0;
     right: 0;
     background: #fff;
-    margin-right: 300px;
+    margin-right: 45px;
+    margin-bottom:-245px;
     overflow: auto;
     border-radius: 1px;
+    float:right;
 
 }
 #legend {
     padding: 10px;
-    box-shadow: 0 1px 2px color: rgb(3, 12, 56);
     line-height: 18px;
     height: 100px;
-    margin-bottom: 40px;
     width: 600px;
-    margin-left: 300px;
+    margin-left: 250px;
+    float:right;
 }
 
 .legend-key {
@@ -168,5 +200,5 @@
     border-radius: 20%;
     width: 10px;
     height: 10px;
-    margin-right: 5px;
+    margin-right: 10px;
 }

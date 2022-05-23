@@ -1,12 +1,18 @@
     
     mapboxgl.accessToken = 'pk.eyJ1IjoiZnJhbnByaW5jZXNzMTk5NSIsImEiOiJjbDJvMmNhd3cyNnRzM2VzYjNkdGtia2d6In0.TAFYy_RFMRMI5UOyo3ZggQ';
+    bounds = [
+        [-171.791110603, 18.91619],
+        [-66.96466, 71.3577635769]
+    ];
     const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/franprincess1995/cl3hmz9ff001615o61yexw69e',
         center: [-119.417931, 36.778259],
-        zoom: 5.0
+        zoom: 5.0,
+        minZoom: 3,
+        maxBounds: bounds
     });
-    
+    map.dragRotate.disable();
     map.on('load', () => {
         const geocoder = new MapboxGeocoder({
             accessToken: mapboxgl.accessToken,
