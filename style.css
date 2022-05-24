@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Radio Canada', sans-serif;
+    font-family: 'Radio Canada', sans-serif, 'Times New Roman', Times, serif, georgia;
 }
 #banner{
     margin:auto;
@@ -19,16 +19,27 @@
     font-family: 'Radio Canada', sans-serif;
     text-align: center;
 }
+
+.banner-text h3{
+    font-size: 20px;
+    font-family: 'Radio Canada', sans-serif;
+    font-style: italic;
+    text-align: center;
+    padding-top: 40px;
+    margin-bottom: 30px;
+}
+
 .banner-text p{
     margin-top: 3%;
-    font-size: 20px;
+    font-size: 18px;
+    font-family: 'Radio Canada', sans-serif;
     font-style: normal;
     text-align: left;
     margin-left: 20%;
     margin-right: 20%;
-    text-indent: 50px;
     margin-bottom: 1px;
-    
+    margin-top: 12px;
+    line-height: 1.5;
 }
 .banner-btn{
     margin: 20px auto 0;
@@ -138,7 +149,8 @@
     font-family: 'Radio Canada', sans-serif;
     font-size: 18px;
     color:rgba(3, 12, 56);
-    margin-top: 2%;
+    margin-top: 10%;
+    font-style: italic;
     margin-bottom: 0%;
     width: 1500px;
     height: 30px;;
