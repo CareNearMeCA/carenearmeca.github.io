@@ -39,9 +39,28 @@
     <p></p>
     <h1></h1>
     </div>
+​
 
+<div class='radiusDropdown'>
+  <label for='radius'>Choose a radius in mile(s)</label>
+  <select name="radius" id="radius">
+    <option value=1>One</option>
+    <option value=5>Five</option>
+    <option value=10>Ten</option>
+    <option value=25>Twenty five</option>
+    <option value=50>Fifty</option>
+  </select>
+
+
+</div>
+<!--
+<section id="feature">
+    <div class="title-text">
+    <p></p>
+    <h1></h1>
+    </div>
     <form id="form_text">
-        <p>Please select the preferred radius in which you want to search:</p>
+        <p>Are you looking for a mental health facility? Please select the preferred radius in which you want to search:</p>
         <div id="radio">
           <input type="radio" id="distance1"
            name="radius" value=1 checked>
@@ -69,12 +88,14 @@
         </div>
     </form>
 </section>
-        
+-->
 <div id='map'>
 </div>
 <div class='map-legend' id='legend'><h1>Facilities per every thousand people</h1><br></div>
 <script src="./mapFunction.js"></script>
+<div class="map-legend" id='facility-legend'></div>
 
+<!--
 <section id="facilities">
   <div class="facility-text">
     <p>
@@ -103,7 +124,7 @@
       <li>Acute Psychiatric Hospital (APH)</li>
     </ul>
   </div>
-
+-->
 
 </body>
 </html>

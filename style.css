@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     font-family: 'Radio Canada', sans-serif, 'Times New Roman', Times, serif, georgia;
-}
+};
+
 #banner{
     margin:auto;
     background-size: cover;
@@ -76,46 +77,20 @@
     border: 5px solid orange;
     margin-top: 25px;
     margin-bottom: 25px;
-  }
+}
   
-  .box :first-child {
-      align-self: center;
-      font-size: 18px;
-      font-family: 'Radio Canada', sans-serif;
-      margin-bottom: 4px;
-  }
-
-  .bolded {
-       font-weight: bold; 
-       color: orange;
-}
-
-#facilities{
-    position: relative;
-    margin-right: 50px;
-    margin-top: 150px;
-    height: 500px;
-    width: 600px;
-    float: right;
-    overflow: auto;
-}
-.facility-text p{
+.box :first-child {
+    align-self: center;
     font-size: 18px;
     font-family: 'Radio Canada', sans-serif;
-    text-align: left;
+    margin-bottom: 4px;
 }
 
-#facility-list{
-    font-family: 'Radio Canda', sans-serif;
-    list-style-type: "→";
-    padding-left: 40px;
-}
 
-#nested-list{
-    font-family: 'Radio Canda', sans-serif;
-    padding-left: 50px;
+.bolded {
+    font-weight: bold; 
+    color: orange;
 }
-
 /*--feature--*/
 
 #feature{
@@ -158,7 +133,7 @@
     margin-left: 100px;
     background-color: white;
 }
-
+​
 #form_text div{
     font-family: 'Radio Canada', sans-serif;
     font-size: 18px;
@@ -173,37 +148,39 @@
 }
 
 #map {
-    height: 500px;
-    width: 600px;
+    height: 700px;
+    width: 1000px;
     position:sticky;
     padding-top: 20px;
+    top: 2000px;
     margin: auto;
-    margin-left: 100px;
     margin-bottom: 200px;
-    float:left;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 .map-legend {
     font-family: 'Radio Canada', sans-serif;
-    font-size: 18px;
-    margin: 50;
+    font-size: 12px;
     color: rgb(3, 12, 56);
-    position: absolute;
-    bottom: 0;
-    right: 0;
+    position: relative;
     background: #fff;
-    margin-right: 45px;
-    margin-bottom:-245px;
+    right: 750px;
+    bottom: 400px;
     overflow: auto;
     border-radius: 1px;
-    float:right;
 
+}
+
+.map-legend h1{
+    font-size: 20px;
+    line-height:normal; 
 }
 #legend {
     padding: 10px;
-    line-height: 18px;
+    line-height: 12px;
     height: 100px;
-    width: 600px;
-    margin-left: 250px;
+    width: 300px;
     float:right;
 }
 
@@ -214,3 +191,46 @@
     height: 10px;
     margin-right: 10px;
 }
+
+#facilitytype-APH{
+    color: white;
+    background-color: #03a8a0;
+
+}
+
+#facilitytype-NON{
+    color: white;
+    background-color: #ff0984;
+}
+
+#facilitytype-NON-DETOX{
+    color: white;
+    background-color: #21409a;
+
+}
+#facilitytype-RES {
+    color: white;
+    background-color: #750c8c;
+}
+
+#facilitytype-RES-DETOX {
+    color: white;
+    background-color: #340c54;
+}
+
+#facilitytype-PHF {
+    color: white;
+    background-color: #04adff;
+}
+
+#facilitytype-PSYCHC {
+    color: white;
+    background-color: #db6ff2;
+}
+
+#facilitytype-NARCOTICS {
+    color: black;
+    background-color: #fedf17;
+}
+
+
