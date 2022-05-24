@@ -1,32 +1,46 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Radio Canada', sans-serif;
-}
+    font-family: 'Radio Canada', sans-serif, 'Times New Roman', Times, serif, georgia;
+};
+
 #banner{
-    background: linear-gradient(rgba(17, 139, 232, 0.4),rgba(156, 204, 238, 0.4));
-    margin-right: 0;
-    margin-left: 0;
+    margin:auto;
     background-size: cover;
     background-position: cover;
-    height: 30vh;
+    text-align: center;
 }
 .banner-text{
-    margin-right: 0;
-    margin-left: 0;
-    text-align: center;
     color: rgb(3, 12, 56);
+    background-color: white;
     padding-top: 80px;
 }
 .banner-text h1{
     font-size: 45px;
     font-family: 'Radio Canada', sans-serif;
+    text-align: center;
 }
+
+.banner-text h3{
+    font-size: 20px;
+    font-family: 'Radio Canada', sans-serif;
+    font-style: italic;
+    text-align: center;
+    padding-top: 40px;
+    margin-bottom: 30px;
+}
+
 .banner-text p{
     margin-top: 3%;
-    font-size: 20px;
-    font-style: italic;
-    margin: 10 10px;
+    font-size: 18px;
+    font-family: 'Radio Canada', sans-serif;
+    font-style: normal;
+    text-align: left;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 1px;
+    margin-top: 12px;
+    line-height: 1.5;
 }
 .banner-btn{
     margin: 20px auto 0;
@@ -38,7 +52,6 @@
     margin: 10 10px;
     padding: 12px 0;
     color:rgb(3, 12, 56);
-    border: .5px solid rgb(3, 12, 56);
     position: relative;
     z-index: 1;
 }
@@ -55,146 +68,169 @@
 .banner-btn a:hover span{
     width: 100%;
 }
-
-#sideNav{
-    width: 250px;
-    height: 100vh;
-    position:fixed;
-    right: 0;
-    top: 0;
-    background: rgb(3, 12, 56);
-    z-index: 2;
-    transition: 0.5s;
+.box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px 2em;
+    margin: 15 25px;
+    padding: 12px 0;
+    border: 5px solid orange;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
-nav ul li{
-    list-style: none;
+  
+.box :first-child {
+    align-self: center;
+    font-size: 18px;
     font-family: 'Radio Canada', sans-serif;
-    margin: 50px 20px;
-}
-nav ul li a{
-    text-decoration: none;
-    color: #fff;
-}
-#menuBtn{
-    width: 50px;
-    height: 50px;
-    background: rgb(3, 12, 56);
-    text-align: center;
-    position: fixed;
-    right: 30px;
-    top: 20px;
-    border-radius: 3px;
-    z-index: 3;
-    cursor: pointer;
-}
-#menuBtn img{
-    width: 20px;
-    margin-top: 15px;
-}
-@media screen and (max-width: 770px) {
-    .banner-text h1{
-        font-size: 44px;
-    }
-    .banner-btn a{
-        display: block;
-        margin: 20px auto
-    }
-
+    margin-bottom: 4px;
 }
 
+
+.bolded {
+    font-weight: bold; 
+    color: orange;
+}
 /*--feature--*/
 
 #feature{
     width: 100%;
-    padding: 70px 0;
-    background: rgba(156, 204, 238, 0.4)
+    padding: 0px 0;
+    background: white;
 }
 .title-text{
     text-align: center;
-    padding-bottom: 70px;
+    padding-bottom: 20px;
+    margin-top: 0%;
+    background-color: white;
 }
 .title-text p{
     margin: auto;
     font-size: 20px;
     font-family: 'Radio Canada', sans-serif;
-    color: rgb(3, 12, 56);
+    background-color: white;
     font-weight: bold;
     position: relative;
     z-index: 1;
     display: inline-block;
 }
 .title-text h1{
-    margin-top: 0%;
     font-size: 20px;
     font-family: 'Radio Canada', sans-serif;
-    color:rgba(3, 12, 56)
+    background-color: white;
 }
 
-.feature-box{
-    text-align: center;
-    padding-bottom: 0px;
-    margin-top: 0%;
-    font-size: 15px;
+#form_text p{
     font-family: 'Radio Canada', sans-serif;
-    color:rgba(3, 12, 56)
-    z-index: 1;
+    font-size: 18px;
+    color:rgba(3, 12, 56);
+    margin-top: 10%;
+    font-style: italic;
+    margin-bottom: 0%;
+    width: 1500px;
+    height: 30px;;
+    margin: auto;
+    margin-left: 100px;
+    background-color: white;
 }
-
-.container{
+​
+#form_text div{
+    font-family: 'Radio Canada', sans-serif;
+    font-size: 18px;
+    color:rgba(3, 12, 56);
     margin-top: 2%;
-    width: 90%;
-    min-height: 0vh;
-    padding: 5%;
-    background-position: center;
-    background-size:contain;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(156, 204, 238, 0.4)
-}
-.search-bar{
-    width: 100%;
-    max-width: 600px;
-    background: rgb(3, 12, 56);
-    display: flex;
-    align-items: center;
-    border-radius: 50px;
-    padding: 10px 20px;
-    backdrop-filter: blur(4px) saturate(180%);
-}
-.search-bar input{
-    background: rgb(3, 12, 56);
-    flex: 1;
-    border: 0;
-    outline: none;
-    padding: 24px 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 17px;
-    color: white;
-}
-::placeholder{
-    color: white;
+    margin-bottom: 0%;
+    width: 1500px;
+    height: 30px;;
+    margin: auto;
+    margin-left: 100px;
+    background-color: white;
 }
 
-.search-bar button img{
-    width: 25px;
-}
-.search-bar button {
-    border: 0;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    background-color:rgb(3, 12, 56);
-    cursor: pointer;
-}
-
-.map {
-    margin-top: 2%;
+#map {
+    height: 700px;
     width: 1000px;
-    height: 500px;
+    position:sticky;
+    padding-top: 20px;
+    top: 2000px;
+    margin: auto;
+    margin-bottom: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.map-legend {
+    font-family: 'Radio Canada', sans-serif;
+    font-size: 12px;
+    color: rgb(3, 12, 56);
+    position: relative;
+    background: #fff;
+    right: 750px;
+    bottom: 400px;
+    overflow: auto;
+    border-radius: 1px;
+
 }
 
-.vis{
-    margin-top: 0%;
-    background: rgba(156, 204, 238, 0.4)
+.map-legend h1{
+    font-size: 20px;
+    line-height:normal; 
 }
+#legend {
+    padding: 10px;
+    line-height: 12px;
+    height: 100px;
+    width: 300px;
+    float:right;
+}
+
+.legend-key {
+    display: inline-block;
+    border-radius: 20%;
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+}
+
+#facilitytype-APH{
+    color: white;
+    background-color: #03a8a0;
+
+}
+
+#facilitytype-NON{
+    color: white;
+    background-color: #ff0984;
+}
+
+#facilitytype-NON-DETOX{
+    color: white;
+    background-color: #21409a;
+
+}
+#facilitytype-RES {
+    color: white;
+    background-color: #750c8c;
+}
+
+#facilitytype-RES-DETOX {
+    color: white;
+    background-color: #340c54;
+}
+
+#facilitytype-PHF {
+    color: white;
+    background-color: #04adff;
+}
+
+#facilitytype-PSYCHC {
+    color: white;
+    background-color: #db6ff2;
+}
+
+#facilitytype-NARCOTICS {
+    color: black;
+    background-color: #fedf17;
+}
+
+

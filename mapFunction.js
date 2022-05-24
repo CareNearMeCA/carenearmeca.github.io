@@ -1,12 +1,18 @@
     
     mapboxgl.accessToken = 'pk.eyJ1IjoiZnJhbnByaW5jZXNzMTk5NSIsImEiOiJjbDJvMmNhd3cyNnRzM2VzYjNkdGtia2d6In0.TAFYy_RFMRMI5UOyo3ZggQ';
+    bounds = [
+        [-171.791110603, 18.91619],
+        [-66.96466, 71.3577635769]
+    ];
     const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/franprincess1995/cl3hmz9ff001615o61yexw69e',
         center: [-119.417931, 36.778259],
-        zoom: 5.0
+        zoom: 4.5,
+        minZoom: 3,
+        maxBounds: bounds
     });
-    
+    map.dragRotate.disable();
     map.on('load', () => {
         const geocoder = new MapboxGeocoder({
             accessToken: mapboxgl.accessToken,
@@ -47,9 +53,12 @@
         map.addControl(geocoder, 'top-left');
         const marker = new mapboxgl.Marker({ color:'#FF7F50'});
         geocoder.on('result', async (event) =>{
+            const legendDisplay = document.getElementById('legend');
+            legendDisplay.remove();
             const point = event.result.center;
             const tileset ='franprincess1995.5mmmo9io';
-            const radiusFromHtml = document.querySelector('input[name="radius"]:checked').value;
+            const radiusFromHtml = document.querySelector('.radiusDropdown select').value;
+            console.log(radiusFromHtml);
             const radius = (1609.34*radiusFromHtml); //Use function that grabs select menu radius value
             const limit = 50;
             marker.setLngLat(point).addTo(map);
@@ -117,6 +126,33 @@
             }
 
         });
+        const popup = new mapboxgl.Popup();
+        const facilityMeta = {
+            'APH': {'name': 'Acute Psychiatric Hospital', 'link': 'https://www.cdph.ca.gov/Programs/CHCQ/LCP/CalHealthFind/Pages/Facility_ProviderTypes.aspx'},
+            'NON': {'name': 'Non-residential Rehab'},
+            'NON-DETOX': {'name': 'Non-residential Detox'},
+            'RES':{'name': 'Residential Rehab'},
+            'RES-DETOX':{'name': 'Residential Detox'},
+            'MHRC':{'name': 'Mental Health Rehabilitation Center', 'link':'https://www.dhcs.ca.gov/mental-health-rehabilitation-centers'},
+            'PHF':{'name': 'Psychiatric Health Facility', 'link':'https://www.dhcs.ca.gov/psychiatric-health-facilities'},
+            'PSYCHC':{'name': 'Psychology Clinic', 'link': 'https://www.cdph.ca.gov/Programs/CHCQ/LCP/CalHealthFind/Pages/Facility_ProviderTypes.aspx'},
+            'NARCOTICS':{'name': 'Narcotics Treatment Program', 'link': 'https://www.dhcs.ca.gov/individuals/Pages/NTP.aspx'}
+    }
+    /*
+        const facilityLegend=document.getElementById('facility-legend');
+        layers.forEach((layer, i) => {
+            const facilityColor = colors[i];
+            const facilityItem = document.createElement('div');
+            const facilityKey = document.createElement('span');
+            key.className = 'facility-legend-key';
+            key.style.backgroundColor = color;
+
+            const value = document.createElement('span');
+            value.innerHTML = `${layer}`;
+            item.appendChild(key);
+            item.appendChild(value);
+            legend.appendChild(item);
+        });
         /*map.addSource('population', {
             type: 'vector',
             url: 'mapbox://franprincess1995.9mkcf6qz'
@@ -128,9 +164,8 @@
             'source': 'population'
 
         })*/
-        const popup = new mapboxgl.Popup();
-
-        map.on('mouseenter', 'tilequery-points', (event) => {
+        
+        map.on('mousemove', 'tilequery-points', (event) => {
             map.getCanvas().style.cursor = 'pointer';
             const properties = event.features[0].properties;
             const obj = JSON.parse(properties.tilequery);
@@ -138,11 +173,10 @@
                 properties.longitude,
                 properties.latitude
             );
-            const content = `<h3>Facility Name: ${properties.facility_name}</h3><h4>Type of Facility: ${properties.facility_type}</h4><p>${properties.address}</p><p>${properties.phone_number}</p><p>Notes: ${properties.other_details}</p><p>${(obj.distance/1609).toFixed(2)} miles from location</p>`;
-            popup.setLngLat(coordinates).setHTML(content).addTo(map)
-            ;
+            const content = `<h2>${properties.facility_name}</h2><p>${(obj.distance/1609).toFixed(2)} miles from location</p><p>${properties.address}</p><p>${properties.phone_number}</p><p>${properties.other_details}</p><h4 id="facilitytype-${properties.facility_type}"><a href=${facilityMeta[properties.facility_type].link}>${facilityMeta[properties.facility_type].name}</a></h4>`;
+            popup.setLngLat(coordinates).setHTML(content).addTo(map);
         });
-        map.on('mouseleave', 'tilequery-points', () => {
+        map.on('click', 'tilequery-points', () => {
             map.getCanvas().style.cursor = '';
             popup.remove();
         });

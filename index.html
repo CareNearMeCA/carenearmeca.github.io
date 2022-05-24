@@ -7,44 +7,13 @@
         <meta charset='utf-8'/>
         <title>Mental health facilities</title>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
         <script src='./static_js/mapbox-gl.js'></script>
         <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
         <script src='./static_js/mapbox-gl-geocoder.js'></script>
         <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css' type='text/css' />
-        <style>
-            #map {
-                height: 500px;
-                width: 500px;
-                position:sticky;
-                padding-top: 20px;
-            }
-            .map-legend {
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                background: #fff;
-                margin-right: 600px;
-                font-family: Arial, sans-serif;
-                overflow: auto;
-                border-radius: 1px;
-            }
-            #legend {
-                padding: 10px;
-                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-                line-height: 18px;
-                height: 100px;
-                margin-bottom: 40px;
-                width: 250px;
-            }
-
-            .legend-key {
-                display: inline-block;
-                border-radius: 20%;
-                width: 10px;
-                height: 10px;
-                margin-right: 5px;
-            }
-        </style>
         
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Radio+Canada&display=swap" rel="stylesheet">
@@ -56,152 +25,106 @@
 <body>
 <section id="banner">
         <div class="banner-text">
-            <h1>Mental Health Care Deserts</h1>
-            <p>Mental health disorders are among the most common health conditions faced by Californians: Nearly 1 in 6 California adults experience a mental illness of some kind, and 1 in 24 have a serious mental illness that makes it difficult to carry out major life activities.</p>
-            <div class="banner-btn">
-                <a href="https://calmatters.org/children-and-youth/2022/04/childrens-mental-health-california/"><span></span> Read more about mental health in California here</a>
-
-            </div>
+            <h1>Care Near You in California</h1>  
+            <h3>By Kavish Harjai and Irene Casado Sánchez</h3>
+            <p>California has over <span class="bolded">2,100</span> mental health facilities throughout the state. More than half of them are concentrated in three urban areas: <span class="bolded">Los Angeles, Orange</span> and <span class="bolded">San Diego</span>. Meanwhile, <span class="bolded">12%</span> of counties –Alpine, Del Norte, Lassen, Madera, Modoc, Mono and Plumas– mainly rural and sparsely populated, do not have any mental health care facility, according to our <a href="https://github.com/irenecasado/healthcare-facility/blob/main/notebooks/analysis.ipynb">analysis</a>.</p>
+            <p>Mental health disorders are among the most common <a href="https://www.chcf.org/wp-content/uploads/2018/03/MentalHealthCalifornia2018.pdf">health conditions faced by Californians</a>: Nearly <span class="bolded">1 in 6</span> California adults experience a mental illness of some kind, and 1 in 24 have a serious mental illness that makes it difficult to carry out major life activities.</p>
+            <p>Solving mental health-related illnesses requires proper attention. But, about <span class="bolded">two-thirds of adults</span> with a mental illness and <span class="bolded">two-thirds of adolescents</span> with major depressive episodes did not get treatment in California in 2018.</p>   
+            <p><span class="bolded">Half of all Californians</span> consider that their community does not have enough mental health providers to meet its needs, as a <a href="https://www.chcf.org/publication/2019-california-health-policy-survey/">2019 statewide poll of California residents</a> shows.</p>
+            <p>Use this map to find if there is any mental health care facility near you.</p>
         </div>
 </section>
 <section id="feature">
     <div class="title-text">
-    <p>FIND THE MENTAL HEALTH YOU NEED</p>
-    <h1>WITH OUR SEARCH TOOL</h1>
-
-    <!-- <div class="container">
-        <form action="https://www.google.com/search" method="get" class="search-bar">
-            <input type="text" placeholder="Introduce your address" name="q">
-            <button type="submit"><img src="images/search.png"></button>
-        </form>
-    <div>
-    -->
+    <p></p>
+    <h1></h1>
     </div>
-    <form>
-        <p>Please select the preferred radius in which you want to search:</p>
-        <div>
+​
+
+<div class='radiusDropdown'>
+  <label for='radius'>Choose a radius in mile(s)</label>
+  <select name="radius" id="radius">
+    <option value=1>One</option>
+    <option value=5>Five</option>
+    <option value=10>Ten</option>
+    <option value=25>Twenty five</option>
+    <option value=50>Fifty</option>
+  </select>
+
+
+</div>
+<!--
+<section id="feature">
+    <div class="title-text">
+    <p></p>
+    <h1></h1>
+    </div>
+    <form id="form_text">
+        <p>Are you looking for a mental health facility? Please select the preferred radius in which you want to search:</p>
+        <div id="radio">
           <input type="radio" id="distance1"
            name="radius" value=1 checked>
           <label for="distance1">1 Mile</label>
         </div>
-        <div>
+        <div id="radio1">
           <input type="radio" id="distance2"
            name="radius" value=5>
           <label for="distance2">5 Miles</label>
         </div>
-        <div>
+        <div id="radio2">
           <input type="radio" id="distance3"
            name="radius" value=10>
           <label for="distance3">10 Miles</label>
         </div>
-        <div>
+        <div id="radio3">
             <input type="radio" id="distance4"
              name="radius" value=25>
             <label for="distance4">25 Miles</label>
           </div>
-        <div>
+        <div id="radio4">
             <input type="radio" id="distance5"
              name="radius" value=50>
             <label for="distance5">50 Miles</label>
         </div>
     </form>
-
-        
+</section>
+-->
 <div id='map'>
 </div>
-<div class='map-legend' id='legend'><h2>Facilities per every thousand people</h2><br></div>
+<div class='map-legend' id='legend'><h1>Facilities per every thousand people</h1><br></div>
 <script src="./mapFunction.js"></script>
+<div class="map-legend" id='facility-legend'></div>
 
-
-
-<div id="sideNav">
-    <nav>
-    <ul>
-        <li><a href="#">HOME</a></li>
-        <li><a href="#">DATA</a></li>
-        <li><a href="#">SEARCH</a></li>
-        <li><a href="#">NEWS</a></li>
+<!--
+<section id="facilities">
+  <div class="facility-text">
+    <p>
+      Hover over a facility to see contact and service details.
+      <br>
+      <br>
+      If no facilities show up around your address, try redoing the search with a bigger radius.
+      <br>
+      <br>
+      All of the facilities you see on the map have been licensed by the CA Department of Health Care Services or the CA Department of Public Health. This list is not exhaustive, and there may be other facilities where you can receive care. 
+      The following list shows what kinds of facilities you will see on the map. Click the links to learn more.
+    </p>
+    <br>
+    <ul id= "facility-list">
+      <li><a href="https://www.dhcs.ca.gov/psychiatric-health-facilities">Psychiatric Health Facilities (PHF)</a></li>
+      <li><a href="https://www.dhcs.ca.gov/individuals/Pages/NTP.aspx">Narcotic Treatment Programs</a></li>
+      <li> Substance Use Treatment Facilities </li>
+        <ul id ="nested-list">
+          <li>NON = Non-residential rehab</li>
+          <li>RES = Residental rehab</li>
+          <li>NON DETOX = Non-residential detox</li>
+          <li>RES DETOX = Residential detox</li>
+        </ul>
+      <li><a href="https://www.dhcs.ca.gov/mental-health-rehabilitation-centers">Mental Health Rehabilitation Center</a></li>
+      <li>Psychology Clinic</li>
+      <li>Acute Psychiatric Hospital (APH)</li>
     </ul>
-    </nav>
-</div>
-<div id="menuBtn">
-    <img src="add_img/menu.png" id="menu">
-</div>
-
-
-<!--Features-->
-
-<section id="feature">
-<div class="title-text">
-<p>FIND THE MENTAL HEALTH YOU NEED</p>
-<h1>WITH OUR SEARCH TOOL</h1>
-<!-- <div class="container">
-    <form action="https://www.google.com/search" method="get" class="search-bar">
-        <input type="text" placeholder="Introduce your address" name="q">
-        <button type="submit"><img src="images/search.png"></button>
-    </form>
-<div>
+  </div>
 -->
-    <img src="images/map_california.png" class="map">
-</div>
-</div>
-</div>
-<div class="feature-box">
-    <div class="features">
-        <h1>CALIFORNIA MENTAL HEALTH CARE IN FIGURES </h1>
-    </div>
-</div>
-</section>
-
-
-<script>
-var menuBtn = document.getElementById("menuBtn")
-var sideNav = document.getElementById("sideNav")
-var menu = document.getElementById("menu")
-
-sideNav.style.right = "-250px";
-
-menuBtn.onclick = function(){
-    if(sideNav.style.right == "-250px"){
-       sideNav.style.right = "0";
-    }
-    else{
-         sideNav.style.right = "-250px";
-
-    }
-}
-</script>
-
-<div id="vis"></div>
-
-    <script type="text/javascript">
-      var yourVlSpec = {
-        $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
-        description: 'A simple bar chart with embedded data.',
-        data: {
-          values: [
-            {a: 'A', b: 28},
-            {a: 'B', b: 55},
-            {a: 'C', b: 43},
-            {a: 'D', b: 91},
-            {a: 'E', b: 81},
-            {a: 'F', b: 53},
-            {a: 'G', b: 19},
-            {a: 'H', b: 87},
-            {a: 'I', b: 52}
-          ]
-        },
-        mark: 'bar',
-        encoding: {
-          x: {field: 'a', type: 'ordinal'},
-          y: {field: 'b', type: 'quantitative'}
-        }
-      };
-      vegaEmbed('#vis', yourVlSpec);
-    </script>
-    <input type="radio" name="radiusChoice" value="1">
-
-
 
 </body>
 </html>
