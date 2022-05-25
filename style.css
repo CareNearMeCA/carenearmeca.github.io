@@ -233,6 +233,48 @@
     background-color: #fedf17;
 }
 
+#facility-type-NARCOTICS a{
+    color:black;
+    background-color: #fedf17;
+}
+
+#facilitytype-PSYCHC a{
+    color: white;
+    background-color: #db6ff2;
+}
+
+#facilitytype-RES a{
+    color: white;
+    background-color: #750c8c;
+}
+
+#facilitytype-PHF a{
+    color: white;
+    background-color: #04adff;
+}
+
+#facilitytype-RES-DETOX a{
+    color: white;
+    background-color: #1CC14E;
+}
+
+#facilitytype-APH a{
+    color: white;
+    background-color: #03a8a0;
+
+}
+
+#facilitytype-NON a{
+    color: white;
+    background-color: #ff0984;
+}
+
+#facilitytype-NON-DETOX a{
+    color: white;
+    background-color: #21409a;
+
+}
+
 .circle {
     width: 40px;
     height: 40px;
