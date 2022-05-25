@@ -4,6 +4,16 @@
     font-family: 'Radio Canada', sans-serif, 'Times New Roman', Times, serif, georgia;
 };
 
+@media {
+    .banner-btn,
+    .banner-text{
+        width: 50%;
+      }
+    .map-legend {
+        width: 50%;
+      }
+  }
+
 #banner{
     margin:auto;
     background-size: cover;
@@ -30,9 +40,19 @@
     margin-bottom: 30px;
 }
 
+.banner-text h4{
+    color: #ffe4b3;
+    font-size: 15px;
+    font-family: 'Radio Canada', sans-serif;
+    font-style: normal;
+    text-align: center;
+    padding-top: 40px;
+    margin-bottom: 5px;
+}
+
 .banner-text p{
     margin-top: 3%;
-    font-size: 18px;
+    font-size: 17px;
     font-family: 'Radio Canada', sans-serif;
     font-style: normal;
     text-align: left;
@@ -68,24 +88,6 @@
 .banner-btn a:hover span{
     width: 100%;
 }
-.box {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px 2em;
-    margin: 15 25px;
-    padding: 12px 0;
-    border: 5px solid orange;
-    margin-top: 25px;
-    margin-bottom: 25px;
-}
-  
-.box :first-child {
-    align-self: center;
-    font-size: 18px;
-    font-family: 'Radio Canada', sans-serif;
-    margin-bottom: 4px;
-}
-
 
 .bolded {
     font-weight: bold; 
@@ -133,7 +135,7 @@
     margin-left: 100px;
     background-color: white;
 }
-​
+
 #form_text div{
     font-family: 'Radio Canada', sans-serif;
     font-size: 18px;
@@ -151,13 +153,13 @@
     height: 700px;
     width: 1000px;
     position:sticky;
-    padding-top: 20px;
-    top: 2000px;
+    padding-top: 10px;
     margin: auto;
-    margin-bottom: 200px;
+    margin-bottom: 10px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 15px;
 }
 .map-legend {
     font-family: 'Radio Canada', sans-serif;
@@ -165,11 +167,9 @@
     color: rgb(3, 12, 56);
     position: relative;
     background: #fff;
-    right: 750px;
-    bottom: 400px;
-    overflow: auto;
+    right: 850px;
+    bottom: 200px;
     border-radius: 1px;
-
 }
 
 .map-legend h1{
@@ -210,12 +210,12 @@
 }
 #facilitytype-RES {
     color: white;
-    background-color: #750c8c;
+    background-color: #6495ED;
 }
 
 #facilitytype-RES-DETOX {
     color: white;
-    background-color: #340c54;
+    background-color: #1CC14E;
 }
 
 #facilitytype-PHF {
@@ -265,7 +265,7 @@
 }
 
 #facilitytype-NON a{
-    color: black;
+    color: white;
     background-color: #ff0984;
 }
 
@@ -275,8 +275,6 @@
 
 }
 
-
-
 .circle {
     width: 40px;
     height: 40px;
@@ -284,15 +282,6 @@
     margin: 0 auto;
 }
 
-.circle.purple {
-    background: purple;
-}
-.circle.orange {
-    background: orange;
-}
-.circle.green {
-    background: green;
-}
 
 .radiusDropdown {
     font-size: 17px;
@@ -324,6 +313,4 @@
     font-family: 'Radio Canada', sans-serif;
     font-style: italic;
     margin-bottom: 4px;
-    margin-left: 20px;
-    margin-right: 20px;
 }
