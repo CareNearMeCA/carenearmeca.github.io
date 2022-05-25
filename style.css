@@ -4,6 +4,16 @@
     font-family: 'Radio Canada', sans-serif, 'Times New Roman', Times, serif, georgia;
 };
 
+@media {
+    .banner-btn,
+    .banner-text{
+        width: 50%;
+      }
+    .map-legend {
+        width: 50%;
+      }
+  }
+
 #banner{
     margin:auto;
     background-size: cover;
@@ -31,6 +41,7 @@
 }
 
 .banner-text h4{
+    color: #ffe4b3;
     font-size: 15px;
     font-family: 'Radio Canada', sans-serif;
     font-style: normal;
@@ -199,7 +210,7 @@
 }
 #facilitytype-RES {
     color: white;
-    background-color: #750c8c;
+    background-color: #6495ED;
 }
 
 #facilitytype-RES-DETOX {
@@ -230,7 +241,7 @@
 }
 
 .circle.purple {
-    background: purple;
+    background: #6495ED;
 }
 .circle.orange {
     background: orange;
@@ -269,6 +280,4 @@
     font-family: 'Radio Canada', sans-serif;
     font-style: italic;
     margin-bottom: 4px;
-    margin-left: 20px;
-    margin-right: 20px;
 }
