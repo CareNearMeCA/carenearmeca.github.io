@@ -233,4 +233,97 @@
     background-color: #fedf17;
 }
 
+#facility-type-NARCOTICS a {
+    color:black;
+    background-color: #fedf17;
+}
 
+#facilitytype-PSYCHC a{
+    color: white;
+    background-color: #db6ff2;
+}
+
+#facilitytype-RES a{
+    color: white;
+    background-color: #750c8c;
+}
+
+#facilitytype-PHF a{
+    color: white;
+    background-color: #04adff;
+}
+
+#facilitytype-RES-DETOX a{
+    color: white;
+    background-color: #1CC14E;
+}
+
+#facilitytype-APH a{
+    color: white;
+    background-color: #03a8a0;
+
+}
+
+#facilitytype-NON a{
+    color: black;
+    background-color: #ff0984;
+}
+
+#facilitytype-NON-DETOX a{
+    color: white;
+    background-color: #21409a;
+
+}
+
+
+
+.circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+.circle.purple {
+    background: purple;
+}
+.circle.orange {
+    background: orange;
+}
+.circle.green {
+    background: green;
+}
+
+.radiusDropdown {
+    font-size: 17px;
+    font-family: 'Radio Canada', sans-serif;
+    font-style: italic;
+    color: rgb(3, 12, 56);
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 0p;
+}
+
+#box {
+    display: grid;
+    margin: 15 25px;
+    padding: 12px 12px;
+    border: 5px solid orange;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    position: absolute;
+}
+  
+#box :first-child {
+    margin:auto;
+    background-size: cover;
+    background-position: cover;
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Radio Canada', sans-serif;
+    font-style: italic;
+    margin-bottom: 4px;
+    margin-left: 20px;
+    margin-right: 20px;
+}

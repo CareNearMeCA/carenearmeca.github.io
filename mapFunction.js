@@ -173,8 +173,19 @@
                 properties.longitude,
                 properties.latitude
             );
-            const content = `<h2>${properties.facility_name}</h2><p>${(obj.distance/1609).toFixed(2)} miles from location</p><p>${properties.address}</p><p>${properties.phone_number}</p><p>${properties.other_details}</p><h4 id="facilitytype-${properties.facility_type}"><a href=${facilityMeta[properties.facility_type].link}>${facilityMeta[properties.facility_type].name}</a></h4>`;
+            const facilLink = facilityMeta[properties.facility_type].link;
+            const facilName = facilityMeta[properties.facility_type].name;
+            if (typeof facilLink !== 'undefined') {
+                var facilTypeWithLink = `<a href=${facilLink}>${facilName}</a>`;
+            }
+            else {
+                var facilTypeWithLink = facilName;
+
+            };
+            const content = `<h2>${properties.facility_name}</h2><p>${(obj.distance/1609).toFixed(2)} miles from location</p><p>${properties.address}</p><p>${properties.phone_number}</p><p>${properties.other_details}</p><h4 id="facilitytype-${properties.facility_type}">${facilTypeWithLink}</h4>`;
             popup.setLngLat(coordinates).setHTML(content).addTo(map);
+            
+            
         });
         map.on('click', 'tilequery-points', () => {
             map.getCanvas().style.cursor = '';
