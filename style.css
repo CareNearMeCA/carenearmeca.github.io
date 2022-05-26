@@ -4,16 +4,6 @@
     font-family: 'Radio Canada', sans-serif, 'Times New Roman', Times, serif, georgia;
 };
 
-@media {
-    .banner-btn,
-    .banner-text{
-        width: 50%;
-      }
-    .map-legend {
-        width: 50%;
-      }
-  }
-
 #banner{
     margin:auto;
     background-size: cover;
@@ -194,85 +184,117 @@
 
 #facilitytype-APH{
     color: white;
-    background-color: #03a8a0;
 
 }
 
 #facilitytype-NON{
     color: white;
-    background-color: #ff0984;
 }
 
 #facilitytype-NON-DETOX{
     color: white;
-    background-color: #21409a;
 
 }
 #facilitytype-RES {
     color: white;
-    background-color: #6495ED;
 }
 
 #facilitytype-RES-DETOX {
     color: white;
-    background-color: #1CC14E;
 }
 
 #facilitytype-PHF {
     color: white;
-    background-color: #04adff;
 }
 
 #facilitytype-PSYCHC {
     color: white;
-    background-color: #db6ff2;
 }
 
 #facilitytype-NARCOTICS {
     color: black;
-    background-color: #fedf17;
 }
 
-#facility-type-NARCOTICS a {
+/* #facility-type-NARCOTICS a {
     color:black;
-    background-color: #fedf17;
 }
 
 #facilitytype-PSYCHC a{
     color: white;
-    background-color: #db6ff2;
 }
 
 #facilitytype-RES a{
     color: white;
-    background-color: #750c8c;
 }
 
 #facilitytype-PHF a{
     color: white;
-    background-color: #04adff;
 }
 
 #facilitytype-RES-DETOX a{
     color: white;
-    background-color: #1CC14E;
 }
 
 #facilitytype-APH a{
     color: white;
-    background-color: #03a8a0;
-
 }
 
 #facilitytype-NON a{
     color: white;
-    background-color: #ff0984;
 }
 
 #facilitytype-NON-DETOX a{
     color: white;
+} */
+
+.boxWidth-NON-DETOX {
     background-color: #21409a;
+    padding: 4px;
+    border-radius: 25px;
 }
+
+.boxWidth-NON {
+    background-color: #ff0984;
+    padding: 4px;
+    border-radius: 25px;
+}
+
+.boxWidth-APH {
+    background-color: #03a8a0;
+    padding: 4px;
+    border-radius: 25px;
+}
+
+.boxWidth-RES-DETOX{
+    background-color: #1CC14E;
+    padding: 4px;
+    border-radius: 25px;
+}
+
+.boxWidth-PHF{
+    background-color: #04adff;
+    padding: 4px;
+    border-radius: 25px;
+}
+
+.boxWidth-RES{
+    background-color: #750c8c;
+    padding: 4px;
+    border-radius: 25px;
+}
+
+.boxWidth-PSYCHC {
+    background-color: #db6ff2;
+    padding: 4px;
+    border-radius: 25px;
+}
+
+.boxWidth-NARCOTICS {
+    background-color: #fedf17;
+    padding: 4px;
+    border-radius: 25px;
+}
+
 
 .circle {
     width: 40px;

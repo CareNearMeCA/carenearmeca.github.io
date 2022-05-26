@@ -182,7 +182,7 @@
                 var facilTypeWithLink = facilName;
 
             };
-            const content = `<h2>${properties.facility_name}</h2><p>${(obj.distance/1609).toFixed(2)} miles from location</p><p>${properties.address}</p><p>${properties.phone_number}</p><p>${properties.other_details}</p><h4 id="facilitytype-${properties.facility_type}">${facilTypeWithLink}</h4>`;
+            const content = `<h2>${properties.facility_name}</h2><p>${(obj.distance/1609).toFixed(2)} miles from location</p><p>${properties.address}</p><p>${properties.phone_number}</p><p>${properties.other_details}</p><h4 id="facilitytype-${properties.facility_type}"><span class="boxWidth-${properties.facility_type}">${facilTypeWithLink}</span></h4>`;
             popup.setLngLat(coordinates).setHTML(content).addTo(map);
             
             
