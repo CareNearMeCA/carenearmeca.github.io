@@ -118,7 +118,7 @@
                     'PSYCHC',
                     '#db6ff2',
                     'RES',
-                    '#6495ED',
+                    '#750c8c',
                     'RES-DETOX',
                     '#1CC14E',
                     '#FF0000'
