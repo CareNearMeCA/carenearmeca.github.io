@@ -52,27 +52,28 @@
     
         map.addControl(geocoder, 'top-left');
         const marker = new mapboxgl.Marker({ color:'#FF7F50'});
+   
         geocoder.on('result', async (event) =>{
+            
             const legendDisplay = document.getElementById('legend');
             legendDisplay.remove();
             const point = event.result.center;
             const tileset ='franprincess1995.5mmmo9io';
             const radiusFromHtml = document.querySelector('.radiusDropdown select').value;
-            console.log(radiusFromHtml);
             const radius = (1609.34*radiusFromHtml); //Use function that grabs select menu radius value
             const limit = 50;
             marker.setLngLat(point).addTo(map);
-            //;
-            //clear style
             const query=await fetch(
             `https://api.mapbox.com/v4/${tileset}/tilequery/${point[0]},${point[1]}.json?radius=${radius}&limit= ${limit} &access_token=${mapboxgl.accessToken}`,
                 { method: 'GET' }
             );
             const json = await query.json();
             map.getSource('tilequery').setData(json);
+    
             
             
         });
+
         map.addSource('tilequery', {
             type: 'geojson',
             data: {
@@ -138,32 +139,6 @@
             'PSYCHC':{'name': 'Psychology Clinic', 'link': 'https://www.cdph.ca.gov/Programs/CHCQ/LCP/CalHealthFind/Pages/Facility_ProviderTypes.aspx'},
             'NARCOTICS':{'name': 'Narcotics Treatment Program', 'link': 'https://www.dhcs.ca.gov/individuals/Pages/NTP.aspx'}
     }
-    /*
-        const facilityLegend=document.getElementById('facility-legend');
-        layers.forEach((layer, i) => {
-            const facilityColor = colors[i];
-            const facilityItem = document.createElement('div');
-            const facilityKey = document.createElement('span');
-            key.className = 'facility-legend-key';
-            key.style.backgroundColor = color;
-
-            const value = document.createElement('span');
-            value.innerHTML = `${layer}`;
-            item.appendChild(key);
-            item.appendChild(value);
-            legend.appendChild(item);
-        });
-        /*map.addSource('population', {
-            type: 'vector',
-            url: 'mapbox://franprincess1995.9mkcf6qz'
-            });
-
-        map.addLayer({
-            'id': 'population_counties',
-            'type': 'heatmap',
-            'source': 'population'
-
-        })*/
         
         map.on('mousemove', 'tilequery-points', (event) => {
             map.getCanvas().style.cursor = 'pointer';
@@ -191,4 +166,5 @@
             map.getCanvas().style.cursor = '';
             popup.remove();
         });
+
     });
